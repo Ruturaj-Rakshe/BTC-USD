@@ -25,3 +25,101 @@ body {
     text-wrap: balance;
   }
 }
+
+html,
+body,
+#root,
+.App {
+  margin: 0;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.chart-container {
+  flex: 1; /* Allow the chart container to fill the available space */
+  display: flex; /* Use flexbox for responsive behavior */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Allow absolute positioning of the chart */
+  padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+  overflow: hidden; /* Prevent overflow */
+  width: 100%;
+  background-color: white;
+  height: 80vh;
+}
+
+.chart {
+  position: absolute; /* Position the chart absolutely within the container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+}
+
+/* Media Queries for additional responsiveness */
+@media (max-width: 768px) {
+  .chart-container {
+    padding-bottom: 75%; /* Adjust aspect ratio for smaller screens if needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    padding-bottom: 100%; /* Further adjust aspect ratio for mobile devices */
+  }
+}
+
+
+.header {
+  padding: 10px;
+  background-color: #213b54;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.time-scale {
+  display: flex;
+  gap: 10px;
+}
+
+.time-scale button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #213b54;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.time-scale button:hover {
+  background-color: #f0f0f0;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.price-up {
+  color: #4caf50; /* Green for positive change */
+  margin-left: 10px;
+}
+
+.price-down {
+  color: #ef5350; /* Red for negative change */
+  margin-left: 10px;
+}
